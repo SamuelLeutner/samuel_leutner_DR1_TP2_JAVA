@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
@@ -190,6 +191,32 @@ public class Main {
     public static void ex5() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 5:");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o valor total da compra: R$ ");
+        double purchaseValue = sc.nextDouble();
+
+        double discountPercentage = 0;
+        double discountValue = 0;
+        double finalValue = purchaseValue;
+
+
+        if (purchaseValue > 1000) {
+            discountPercentage = 0.10;
+        } else if (purchaseValue >= 500 && purchaseValue <= 1000) {
+            discountPercentage = 0.05;
+        }
+
+        discountValue = purchaseValue * discountPercentage;
+        finalValue = purchaseValue - discountValue;
+
+        System.out.println("\n--- Resumo da Compra ---");
+        System.out.println("Valor Original: " + purchaseValue);
+        System.out.println("Percentual de Desconto: " + (discountPercentage * 100) + "%");
+        System.out.println("Valor do Desconto: " + discountValue);
+        System.out.println("Valor Final: " + finalValue);
+
         System.out.println("\n==============\n");
     }
 
