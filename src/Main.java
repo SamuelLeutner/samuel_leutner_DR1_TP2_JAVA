@@ -1,4 +1,3 @@
-import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
@@ -223,6 +222,18 @@ public class Main {
     public static void ex6() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 6:");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite um ano para verificar se é bissexto: ");
+        int year = sc.nextInt();
+
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + " é um ano bissexto.");
+        } else {
+            System.out.println(year + " não é um ano bissexto.");
+        }
+
         System.out.println("\n==============\n");
     }
 
