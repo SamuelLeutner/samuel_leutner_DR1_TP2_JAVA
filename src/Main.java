@@ -1,8 +1,6 @@
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class Main {
     public static void main(String[] args) {
@@ -168,6 +166,24 @@ public class Main {
     public static void ex4() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 4:");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o dia do seu nascimento: ");
+        int day = sc.nextInt();
+        System.out.print("Digite o mês do seu nascimento: ");
+        int month = sc.nextInt();
+        System.out.print("Digite o ano do seu nascimento: ");
+        int year = sc.nextInt();
+
+        LocalDate birthDate = LocalDate.of(year, month, day);
+
+        LocalDate currentDate = LocalDate.now();
+
+        long daysLived = ChronoUnit.DAYS.between(birthDate, currentDate);
+
+        System.out.println("Você viveu " + daysLived + " dias.");
+
         System.out.println("\n==============\n");
     }
 
