@@ -81,6 +81,38 @@ public class Main {
     public static void ex2() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 2:");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite as quatro notas bimestrais a seguir. Notas aceitas de (0-10).\n\n");
+
+        System.out.print("Digite a nota do primeiro Bimestre: ");
+        int first = sc.nextInt();
+        System.out.print("Digite a nota do segundo Bimestre: ");
+        int second = sc.nextInt();
+        System.out.print("Digite a nota do terceiro Bimestre: ");
+        int third  = sc.nextInt();
+        System.out.print("Digite a nota do quarto Bimestre: ");
+        int four  = sc.nextInt();
+
+        int sum = first + second + third + four;
+        double average = (double) sum / 4;
+
+        System.out.println("A soma das suas notas deu: " + sum);
+        System.out.println("A média das suas notas foram: " + average);
+
+        if (average >= 7) {
+            System.out.println("Parabéns você foi aprovado e passou de ano!");
+        }
+
+        if (average >= 5 && average <= 6.9) {
+            System.out.println("Quase lá, você está de recuperação!");
+        }
+
+        if (average < 5) {
+            System.out.println("Você foi reprovado. Continue firme no próximo ano!");
+        }
+
         System.out.println("\n==============\n");
     }
 
