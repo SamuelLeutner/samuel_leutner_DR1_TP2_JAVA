@@ -288,6 +288,47 @@ public class Main {
     public static void ex8() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 8:");
+
+        Scanner sc = new Scanner(System.in);
+
+        char continuar = 's';
+
+        do {
+            System.out.println("Digite os comprimentos dos três lados do triângulo:");
+
+            System.out.print("Lado 1: ");
+            double lado1 = sc.nextDouble();
+
+            System.out.print("Lado 2: ");
+            double lado2 = sc.nextDouble();
+
+            System.out.print("Lado 3: ");
+            double lado3 = sc.nextDouble();
+
+            if (lado1 <= 0 || lado2 <= 0 || lado3 <= 0) {
+                System.out.println("Medidas inválidas. Os lados devem ser positivos.");
+                continue;
+            }
+
+            if (!(lado1 + lado2 > lado3 && lado1 + lado3 > lado2 && lado2 + lado3 > lado1)) {
+                System.out.println("Estas medidas não formam um triângulo.");
+                continue;
+            }
+
+            if (lado1 == lado2 && lado2 == lado3) {
+                System.out.println("Triângulo Equilátero");
+            } else if (lado1 == lado2 || lado2 == lado3 || lado1 == lado3) {
+                System.out.println("Triângulo Isósceles");
+            } else {
+                System.out.println("Triângulo Escaleno");
+            }
+
+            System.out.print("Deseja continuar? (S/N): ");
+            continuar = sc.next().charAt(0);
+        } while (continuar == 'S' || continuar == 's');
+
+        System.out.println("Programa encerrado.");
+
         System.out.println("\n==============\n");
     }
 
