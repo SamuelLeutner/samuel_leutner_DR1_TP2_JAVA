@@ -1,5 +1,6 @@
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -360,6 +361,31 @@ public class Main {
     public static void ex10() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 10:");
+
+        Random random = new Random();
+        Scanner sc = new Scanner(System.in);
+
+        int target = random.nextInt(100) + 1;
+        int attempts = 0;
+        int guess;
+
+        System.out.println("Bem-vindo ao Jogo de Adivinhação!");
+        System.out.println("Tente adivinhar o número entre 1 e 100.");
+
+        do {
+            System.out.print("Digite seu número: ");
+            guess = sc.nextInt();
+            attempts++;
+
+            if (guess < target) {
+                System.out.println("Seu número é MENOR que o número secreto.");
+            } else if (guess > target) {
+                System.out.println("Seu número é MAIOR que o número secreto.");
+            } else {
+                System.out.println("Parabéns! Você acertou o número secreto em " + attempts + " tentativas!");
+            }
+        } while (guess != target);
+
         System.out.println("\n==============\n");
     }
 
