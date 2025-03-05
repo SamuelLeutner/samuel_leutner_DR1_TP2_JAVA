@@ -335,6 +335,25 @@ public class Main {
     public static void ex9() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 9:");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Crie sua senha: ");
+        String password = sc.nextLine();
+
+        String password_confirmation;
+
+        do {
+            System.out.print("Confirme sua senha: ");
+            password_confirmation = sc.nextLine();
+
+            if (!password.equals(password_confirmation)) {
+                System.out.println("Senha incorreta. Tente novamente.");
+            }
+        } while (!password.equals(password_confirmation));
+
+        System.out.println("Senha cadastrada com sucesso!");
+
         System.out.println("\n==============\n");
     }
 
