@@ -41,6 +41,40 @@ public class Main {
     public static void ex1() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 1:");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o seu nome: ");
+        String name = sc.nextLine();
+        System.out.print("Digite qual é a sua idade: ");
+        int idade = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Digite qual é o nome da sua mãe: ");
+        String motherName = sc.nextLine();
+        System.out.print("Digite qual é o nome do seu pai: ");
+        String fatherName = sc.nextLine();
+
+        if (name.length() < motherName.length() ) {
+            System.out.println("O nome da mãe " + motherName + " com " + motherName.length() + " caracteres é maior do que o do usuário " + name + " com " + name.length() + ".");
+        }
+
+        if (name.length() < fatherName.length()) {
+            System.out.println("O nome do pai " + fatherName + " com " + fatherName.length() + " caracteres é maior do que o do usuário " + name + " com " + name.length() + ".");
+        }
+
+        if (name.length() > motherName.length() && name.length() > fatherName.length()) {
+            System.out.println("O nome do usuário " + name + " com " + name.length() + " caracteres é maior que o nome dos pais.");
+        }
+
+        System.out.println("\nE os dados inseridos são:");
+        System.out.println("Nome do Usuário: " + name);
+        System.out.println("Quantidade de Caracteres do nome do Usuário: " + name.length());
+        System.out.println("Idade do Usuário: " + idade);
+        System.out.println("Nome da Mãe: " + motherName);
+        System.out.println("Quantidade de Caracteres do nome da Mãe: " + motherName.length());
+        System.out.println("Nome do Pai: " + fatherName);
+        System.out.println("Quantidade de Caracteres do nome do Pai: " + fatherName.length());
+
         System.out.println("\n==============\n");
     }
 
