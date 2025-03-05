@@ -1,4 +1,8 @@
 import java.util.Scanner;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,6 +21,8 @@ public class Main {
             }
 
             x = sc.nextInt();
+            sc.nextLine();
+
             switch (x) {
                 case 0 -> System.exit(0);
                 case 1 -> ex1();
@@ -34,7 +40,6 @@ public class Main {
                 default -> System.out.println("Valor inválido! Tente novamente.");
             }
         } while (x != 0);
-
         sc.close();
     }
 
@@ -119,6 +124,44 @@ public class Main {
     public static void ex3() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 3:");
+
+        Scanner sc = new Scanner(System.in);
+
+        final double EXCHANGE_RATE_USD = 5.88;
+        final double EXCHANGE_RATE_EUR = 6.24;
+        final double EXCHANGE_RATE_GBP = 7.52;
+
+        System.out.print("Digite o valor em reais (BRL): ");
+        double amountInBRL = sc.nextDouble();
+
+        System.out.print("Escolha a moeda de destino (dólar, euro ou libra): ");
+        String targetCurrency = sc.next().toLowerCase();
+
+        double convertedAmount = 0;
+        String currencySymbol = "";
+
+        switch (targetCurrency) {
+            case "dólar", "dolar":
+                convertedAmount = amountInBRL / EXCHANGE_RATE_USD;
+                currencySymbol = "USD";
+                break;
+            case "euro":
+                convertedAmount = amountInBRL / EXCHANGE_RATE_EUR;
+                currencySymbol = "EUR";
+                break;
+            case "libra":
+                convertedAmount = amountInBRL / EXCHANGE_RATE_GBP;
+                currencySymbol = "GBP";
+                break;
+            default:
+                System.out.println("Moeda inválida! Escolha entre dólar, euro ou libra.");
+                return;
+        }
+
+        convertedAmount = Math.round(convertedAmount * 100.0) / 100.0;
+
+        System.out.println("O valor convertido é: " + convertedAmount + " " + currencySymbol);
+
         System.out.println("\n==============\n");
     }
 
