@@ -423,6 +423,24 @@ public class Main {
     public static void ex12() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 12:");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite uma frase: ");
+        String phrase = sc.nextLine();
+
+        String[] words = phrase.split("\\s+");
+
+        int count = 0;
+        for (String word : words) {
+            if (!word.isEmpty()) {
+                count++;
+            }
+        }
+
+        System.out.println("A frase contém " + count + " palavra(s).");
+        System.out.println("E a frase contém " + phrase.length() + " caracteres.");
+
         System.out.println("\n==============\n");
     }
 }
