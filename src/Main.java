@@ -240,6 +240,48 @@ public class Main {
     public static void ex7() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 7:");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite seu salário bruto anual: R$ ");
+        double annualSalary = sc.nextDouble();
+
+        double taxRate = 0;
+        double taxDeduction = 0;
+        double taxAmount = 0;
+
+        if (annualSalary > 0 && annualSalary <= 27110.40) {
+            taxRate = 0;
+            taxDeduction = 0;
+        } else if (annualSalary > 27110.40 && annualSalary <= 33919.80) {
+            taxRate = 0.075;
+            taxDeduction = 2033.28;
+        } else if (annualSalary > 33919.80 && annualSalary <= 45012.60) {
+            taxRate = 0.15;
+            taxDeduction = 4577.28;
+        } else if (annualSalary > 45012.60 && annualSalary <= 55976.16) {
+            taxRate = 0.225;
+            taxDeduction = 7953.24;
+        } else if (annualSalary > 55976.16) {
+            taxRate = 0.275;
+            taxDeduction = 55976.16;
+        }
+
+        if (taxRate > 0) {
+            taxAmount = (annualSalary * taxRate) - taxDeduction;
+        }
+
+        taxAmount = Math.max(0, taxAmount);
+
+        double netSalary = annualSalary - taxAmount;
+
+        System.out.println("\n--- Cálculo do Imposto de Renda ---");
+        System.out.println("Salário Bruto Anual: " + annualSalary);
+        System.out.println("Alíquota: " + (taxRate * 100) + "%");
+        System.out.println("Dedução: " + taxDeduction);
+        System.out.println("Imposto a Pagar: " + taxAmount);
+        System.out.println("Salário Líquido Anual: " + netSalary);
+
         System.out.println("\n==============\n");
     }
 
