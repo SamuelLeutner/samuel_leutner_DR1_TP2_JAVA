@@ -392,6 +392,31 @@ public class Main {
     public static void ex11() {
         System.out.println("\n==============\n");
         System.out.println("Exercício 11:");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite o valor inicial: ");
+        int initialValue = sc.nextInt();
+
+        System.out.print("Digite o incremento: ");
+        int increment = sc.nextInt();
+
+        System.out.print("Sequência: ");
+
+        int actualValue = initialValue;
+        boolean firstNumber = true;
+
+        while (actualValue <= 100) {
+            if (!firstNumber) {
+                System.out.print(", ");
+            }
+
+            System.out.print(actualValue);
+
+            actualValue += increment;
+            firstNumber = false;
+        }
+
         System.out.println("\n==============\n");
     }
 
